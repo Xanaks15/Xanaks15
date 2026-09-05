@@ -4,7 +4,7 @@
   <h3>Estudiante de Ingeniería en Tecnologías de la Información (BUAP) | Data Science, Machine Learning & Backend Developer</h3>
 
   <p align="center">
-    📍 <b>Puebla, México</b> &nbsp;|&nbsp; 🎓 <b>Graduación estimada: Agosto 2027</b>
+    📍 <b>Puebla, México</b>
   </p>
 
   <!-- ANIMATED TYPING TEXT -->
@@ -31,50 +31,6 @@
 
 ---
 
-### 👨‍💻 Sobre Mí
-
-- 🎓 Estudiante de **Ingeniería en Tecnologías de la Información** en la **Benemérita Universidad Autónoma de Puebla (BUAP)**.
-- 🔬 Especializado en **Procesamiento de Lenguaje Natural (PLN / NLP)**, **Minería de Datos**, **Machine Learning Supervisado** y **Arquitectura de Microservicios Backend**.
-- 📜 Certificado **Scrum Foundation Professional Certification (SFPC)** y en preparación activa para **AWS Certified Data Engineer – Associate (DEA-C01)** y **AWS Cloud Practitioner**.
-- 🌐 Idiomas: **Español (Nativo)** | **Inglés (B1 — Intermedio)**.
-
----
-
-### 📌 Proyecto Destacado (Pinned Project)
-
-<div align="center">
-  <h2>🧠 Clasificación de Emociones en Textos en Español (2025)</h2>
-  <p><b>Procesamiento de Lenguaje Natural (PLN) • Machine Learning Supervisado • Minería de Datos</b></p>
-</div>
-
-> 🏆 **Proyecto presentado en el II Congreso Nacional de Ciencias de Datos (UDLAP 2025)**
-
-- **Diseño del Pipeline PLN**: Colaboración en la estructuración y limpieza del pipeline de procesamiento de texto en español y minería de datos.
-- **Evaluación de Algoritmos**: Lideré la evaluación comparativa mediante **validación cruzada estratificada** comparando los modelos:
-  - `KNN` (K-Nearest Neighbors)
-  - `Naive Bayes`
-  - `SVM` (Support Vector Machines)
-  - `Random Forest`
-- **Resultados de Alto Rendimiento**: Sobre un corpus de **3,720 textos**, se logró identificar la configuración óptima obteniendo:
-  - 🎯 **F1-score**: `0.77`
-  - 📈 **ROC-AUC**: `0.95`
-
----
-
-### 🚀 Otros Proyectos Técnicos
-
-#### 🏫 AGM — Sistema de Gestión Escolar (Arquitectura de Microservicios) (2026)
-> **Microservicios, Docker, Railway, Vercel & Render**
-- Desarrollé el microservicio de calificaciones dentro de una **arquitectura distribuida**, implementando la lógica de negocio y persistencia de datos independiente.
-- Estandarización de entornos mediante **Docker** y despliegue de infraestructura mediante CLI configurando bases de datos en **Railway** y servicios en **Vercel** y **Render**.
-
-#### 📊 Data Inspector — Plataforma Web para Análisis Automático de Datasets (2026)
-> **Django REST Framework, Pandas, JavaScript & Chart.js**
-- Plataforma web para cargar y analizar datasets CSV, automatizando la detección de valores faltantes, duplicados, tipos de datos y distribuciones con histogramas.
-- API implementada con **Django REST Framework** y procesamiento en **Pandas**; el frontend consume los datos mediante **JavaScript** y genera visualizaciones interactivas con **Chart.js**.
-
----
-
 ### 🛠️ Habilidades Técnicas
 
 <div align="center">
@@ -91,25 +47,22 @@
 
 ---
 
-### 📜 Certificaciones & Reconocimientos
-
-- 🏅 **Scrum Foundation Professional Certification (SFPC)** — *CertiProf (2024)*
-- ☁️ **AWS Partner Certification Readiness — AWS Certified Data Engineer – Associate (DEA-C01)** — *En curso*
-- ☁️ **Preparación para AWS Certified Cloud Practitioner** — *En curso*
-- 🏆 **Concurso de Carteles** — *II Congreso Nacional de Ciencias de Datos, UDLAP (2025)*
-
----
-
 ### 📈 Estadísticas de GitHub
 
 <div align="center">
 
-  <img src="https://github-readme-stats.vercel.app/api?username=Xanaks15&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xanaks15&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" width="48%" />
+  <a href="https://github.com/Xanaks15">
+    <img src="https://github-readme-stats.vercel.app/api?username=Xanaks15&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" width="49%" />
+  </a>
+  <a href="https://github.com/Xanaks15">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xanaks15&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" width="49%" />
+  </a>
 
   <br/><br/>
 
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Xanaks15&theme=tokyonight&hide_border=true" alt="GitHub Streak" width="97%" />
+  <a href="https://github.com/Xanaks15">
+    <img src="https://streak-stats.demolab.com/?user=Xanaks15&theme=tokyonight&hide_border=true" alt="GitHub Streak" width="98%" />
+  </a>
 
 </div>
 
