@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
       - name: Pull RSS Feed
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           # Reemplaza esta URL con tu feed RSS (ej. Medium, Dev.to, Hashnode, WordPress, etc.)
-          feed_list: "https://dev.to/feed/,https://medium.com/feed/@yourusername"
+          feed_list: "https://dev.to/feed/,https://medium.com/feed/@Xanaks15"
           max_post_count: 5
           commit_message: "chore: update latest blog posts in README"
           gh_token: ${{ secrets.GITHUB_TOKEN }}
