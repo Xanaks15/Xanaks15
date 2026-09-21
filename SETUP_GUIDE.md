@@ -32,7 +32,7 @@ Abre tu copia local del repositorio de perfil y revisa estos valores:
 
 ## 🔑 Paso 3: Configurar Permisos de GitHub Actions
 
-Para que las automatizaciones (Snake, WakaTime, Blog Posts) puedan actualizar tu perfil automáticamente:
+Para que las automatizaciones (Snake y Blog Posts) puedan actualizar tu perfil automáticamente:
 
 Los jobs que actualizan archivos declaran `permissions: contents: write` en sus
 workflows. No necesitas ampliar el permiso predeterminado de todos los workflows
@@ -41,20 +41,7 @@ esa política con su administrador.
 
 ---
 
-## 🔐 Paso 4: Configurar el secreto de WakaTime
-
-### A) WakaTime (Tiempo de programación):
-1. Crea una cuenta gratuita en [wakatime.com](https://wakatime.com) e instala la extensión en tu editor de código (VS Code, JetBrains, etc.).
-2. En WakaTime, ve a **Account Settings** -> **API Key** y copia tu clave.
-3. En tu repositorio de GitHub, ve a **Settings** -> **Secrets and variables** -> **Actions**.
-4. Haz clic en **New repository secret**.
-5. Nombre: `WAKATIME_API_KEY` | Valor: Pega tu clave de API de WakaTime.
-
-El workflow de Metrics fue retirado. No necesitas crear un token para esa integración.
-
----
-
-## 📤 Paso 5: Subir los Archivos a GitHub
+## 📤 Paso 4: Subir los Archivos a GitHub
 
 Puedes subir los archivos mediante comandos Git en tu terminal:
 
@@ -71,12 +58,13 @@ git push origin main
 
 ---
 
-## ⚡ Paso 6: Ejecutar las Automatizaciones por primera vez
+## ⚡ Paso 5: Ejecutar las Automatizaciones por primera vez
 
 1. Ve a la pestaña **Actions** en tu repositorio de GitHub.
 2. Verás la lista de Workflows (`Generate Snake Contribution Animation`, `Latest Blog Posts Workflow`, etc.).
 3. Haz clic en cada uno y presiona el botón **Run workflow** -> **Run workflow**.
 
-Comprueba que la ejecución termine correctamente. Blog y WakaTime necesitan la
-URL y el secreto indicados arriba; sus comprobaciones no se omiten si faltan.
+Comprueba que la ejecución termine correctamente. Blog necesita la URL RSS
+indicada arriba; su comprobación no se omite si falta.
+WakaTime y Metrics fueron retirados y no requieren secretos.
 Las ejecuciones fallidas anteriores siguen apareciendo en el historial de Actions.

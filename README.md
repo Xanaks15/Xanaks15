@@ -76,13 +76,6 @@
 
 ---
 
-### ⏱️ Tiempo de Programación (WakaTime)
-
-<!--START_SECTION:wakatime-->
-<!--END_SECTION:wakatime-->
-
----
-
 ### 📝 Últimas Publicaciones
 
 <!-- BLOG-POST-LIST:START -->
