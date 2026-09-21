@@ -16,15 +16,17 @@ Esta guía te guiará paso a paso para desplegar tu nuevo perfil de GitHub perso
 
 ## ✏️ Paso 2: Personalizar tu Usuario en los Archivos
 
-Abre la carpeta del proyecto `C:\Users\52249\.gemini\antigravity\scratch\github-profile-advanced` y realiza estos reemplazos sencillos:
+Abre tu copia local del repositorio de perfil y revisa estos valores:
 
 1. **En `README.md`**:
    - Reemplaza todas las apariciones de `TU_USUARIO` por tu verdadero nombre de usuario de GitHub (ej. `alexdev`).
    - Reemplaza `https://linkedin.com/in/TU_USUARIO`, `https://TU_PORTAFOLIO.com`, y `tuemail@ejemplo.com` por tus enlaces reales.
    - Ajusta los badges de tu Tech Stack si deseas agregar o quitar alguna tecnología.
 
-2. **En `.github/workflows/blog-post-workflow.yml`**:
-   - Reemplaza la URL del feed RSS en `feed_list` por la tuya (Dev.to, Medium, Hashnode, WordPress, etc.).
+2. **Fuente del blog**:
+   - En **Settings → Secrets and variables → Actions → Variables**, crea `BLOG_FEED_URL` con tu URL RSS personal.
+   - Comprueba que la URL responde y contiene tus publicaciones. No uses el feed genérico de una plataforma.
+   - El workflow informa de la configuración pendiente si la variable no existe.
 
 ---
 
@@ -32,14 +34,14 @@ Abre la carpeta del proyecto `C:\Users\52249\.gemini\antigravity\scratch\github-
 
 Para que las automatizaciones (Snake, WakaTime, Blog Posts) puedan actualizar tu perfil automáticamente:
 
-1. Ve a tu repositorio en GitHub -> **Settings** (Configuración).
-2. En el menú lateral izquierdo, haz clic en **Actions** -> **General**.
-3. En la sección **Workflow permissions**, selecciona **"Read and write permissions"**.
-4. Haz clic en **Save** (Guardar).
+Los jobs que actualizan archivos declaran `permissions: contents: write` en sus
+workflows. No necesitas ampliar el permiso predeterminado de todos los workflows
+del repositorio. Si una política de la organización impide esa escritura, revisa
+esa política con su administrador.
 
 ---
 
-## 🔐 Paso 4: (Opcional) Configurar Secrets/Llaves para WakaTime y Métricas
+## 🔐 Paso 4: Configurar el secreto de WakaTime
 
 ### A) WakaTime (Tiempo de programación):
 1. Crea una cuenta gratuita en [wakatime.com](https://wakatime.com) e instala la extensión en tu editor de código (VS Code, JetBrains, etc.).
@@ -48,9 +50,7 @@ Para que las automatizaciones (Snake, WakaTime, Blog Posts) puedan actualizar tu
 4. Haz clic en **New repository secret**.
 5. Nombre: `WAKATIME_API_KEY` | Valor: Pega tu clave de API de WakaTime.
 
-### B) GitHub Metrics Token (Métricas avanzadas):
-1. Crea un Personal Access Token (PAT) en GitHub: [github.com/settings/tokens](https://github.com/settings/tokens) con permisos `public_repo` y `read:user`.
-2. Agrégalo en tu repositorio en **Settings** -> **Secrets and variables** -> **Actions** con el nombre `METRICS_TOKEN`.
+El workflow de Metrics fue retirado. No necesitas crear un token para esa integración.
 
 ---
 
@@ -59,14 +59,12 @@ Para que las automatizaciones (Snake, WakaTime, Blog Posts) puedan actualizar tu
 Puedes subir los archivos mediante comandos Git en tu terminal:
 
 ```bash
-cd C:\Users\52249\.gemini\antigravity\scratch\github-profile-advanced
-
-git init
+git clone https://github.com/Xanaks15/Xanaks15.git
+cd Xanaks15
+# Edita los archivos antes de preparar el commit.
 git add .
-git commit -m "feat: mi perfil avanzado de github con automatizaciones"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/TU_USUARIO.git
-git push -u origin main --force
+git commit -m "chore: actualizar perfil"
+git push origin main
 ```
 
 *(También puedes arrastrar los archivos directamente desde el navegador en la pestaña "Add file" -> "Upload files" en GitHub).*
@@ -79,4 +77,6 @@ git push -u origin main --force
 2. Verás la lista de Workflows (`Generate Snake Contribution Animation`, `Latest Blog Posts Workflow`, etc.).
 3. Haz clic en cada uno y presiona el botón **Run workflow** -> **Run workflow**.
 
-¡Y listo! 🎉 Tu perfil se actualizará automáticamente con banners animados, gráficos interactivos y estadísticas en tiempo real.
+Comprueba que la ejecución termine correctamente. Blog y WakaTime necesitan la
+URL y el secreto indicados arriba; sus comprobaciones no se omiten si faltan.
+Las ejecuciones fallidas anteriores siguen apareciendo en el historial de Actions.
