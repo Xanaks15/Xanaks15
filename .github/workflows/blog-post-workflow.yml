@@ -5,19 +5,31 @@ on:
     # Se ejecuta todos los días a medianoche
     - cron: '0 0 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/blog-post-workflow.yml]
 
 jobs:
   update-readme-with-blog:
     name: Update README with latest blog posts
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - name: Check personal RSS configuration
+        env:
+          BLOG_FEED_URL: ${{ vars.BLOG_FEED_URL }}
+        run: |
+          if [ -z "$BLOG_FEED_URL" ]; then
+            echo "::error::Configure the BLOG_FEED_URL Actions variable with your personal RSS URL before running this workflow."
+            exit 1
+          fi
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, Node 24
       - name: Pull RSS Feed
-        uses: gautamkrishnar/blog-post-workflow@v1
+        uses: gautamkrishnar/blog-post-workflow@f177491c77670f150ab4e9b9890254d8eba4164b # v1
         with:
-          # Reemplaza esta URL con tu feed RSS (ej. Medium, Dev.to, Hashnode, WordPress, etc.)
-          feed_list: "https://dev.to/feed/,https://medium.com/feed/@Xanaks15"
+          feed_list: ${{ vars.BLOG_FEED_URL }}
           max_post_count: 5
           commit_message: "chore: update latest blog posts in README"
           gh_token: ${{ secrets.GITHUB_TOKEN }}
